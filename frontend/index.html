@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CloudOps Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            ☁️ CloudOps
+        </div>
+
+        <div class="user">
+            👤 Developer
+        </div>
+    </header>
+
+
+    <main>
+
+        <h1>Cloud Deployment Dashboard</h1>
+
+        <p class="subtitle">
+            Monitor your cloud infrastructure and deployments
+        </p>
+
+
+        <!-- Status Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>EC2 Server</h3>
+                <div class="status">
+                    🟢 ONLINE
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Docker</h3>
+                <div class="status">
+                    🟢 RUNNING
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Database</h3>
+                <div class="status">
+                    🟢 CONNECTED
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Nginx</h3>
+                <div class="status">
+                    🟢 RUNNING
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Deployment Pipeline -->
+
+        <section class="panel">
+
+            <h2>Deployment Pipeline</h2>
+
+            <div class="pipeline">
+
+                <div class="step">
+                    <span>1</span>
+                    GitHub
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <span>2</span>
+                    GitHub Actions
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <span>3</span>
+                    Docker
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <span>4</span>
+                    Jenkins
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <span>5</span>
+                    AWS EC2
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Deployment -->
+
+        <section class="panel">
+
+            <h2>Deploy Application</h2>
+
+            <button onclick="deploy()">
+                🚀 Deploy Now
+            </button>
+
+            <p id="deploymentStatus">
+                Ready to deploy
+            </p>
+
+        </section>
+
+
+        <!-- Server Information -->
+
+        <section class="panel">
+
+            <h2>Server Information</h2>
+
+            <div class="server-info">
+
+                <p>
+                    <strong>Server:</strong>
+                    AWS EC2
+                </p>
+
+                <p>
+                    <strong>Operating System:</strong>
+                    Ubuntu Linux
+                </p>
+
+                <p>
+                    <strong>Container:</strong>
+                    cloudops-app
+                </p>
+
+                <p>
+                    <strong>Environment:</strong>
+                    Production
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
