@@ -1,0 +1,46 @@
+name: CloudOps CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate CloudOps Application
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check Project Files
+        run: |
+          test -f frontend/index.html
+          test -f frontend/style.css
+          test -f frontend/app.js
+          echo "All project files found!"
+
+      - name: Validate JavaScript
+        run: |
+          node --check frontend/app.js
+          echo "JavaScript validation successful!"
+
+      - name: Validate HTML
+        run: |
+          grep -qi "<!DOCTYPE html>" frontend/index.html
+          grep -qi "</html>" frontend/index.html
+          echo "HTML validation successful!"
+
+      - name: CI Success
+        run: echo "CloudOps CI Pipeline completed successfully!"
